@@ -1,0 +1,65 @@
+﻿@page
+@model Biblioteca.Pages.Biblio.NewModel
+@{
+}
+
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="alert alert-warning alert-dismissible fade show" role='alert'>
+		<strong>@Model.errorMessage</strong>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Chiudi"></button>
+	</div>
+}
+
+<form method="post">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Titolo</label>
+		<div class="col-sm-6">
+			<input type="text" name="Titolo">
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Autore</label>
+		<div class="col-sm-6">
+			<input type="text" name="Autore">
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Editore</label>
+		<div class="col-sm-6">
+			<input type="text" name="Editore">
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Prezzo</label>
+		<div class="col-sm-6">
+			<input type="text" name="Prezzo">
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Data di Pubblicazione</label>
+		<div class="col-sm-6">
+			<input type="text" name="DataPub">
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Disponibilità</label>
+		<div class="col-sm-6">
+			<input type="text" name="Quantita">
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-1 d-grid">
+			<button type="submit" class="btn btn-primary">Create</button>
+		</div>
+		<div class="col-sm-1 d-grid">
+			<a class="btn btn-outline-primary" href="Lista" role="button">Cancel</a>
+		</div>
+	</div>
+</form>

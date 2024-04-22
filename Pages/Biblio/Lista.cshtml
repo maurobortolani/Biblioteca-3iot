@@ -1,0 +1,43 @@
+﻿@page
+@model Biblioteca.Pages.Biblio.ListaModel
+@{
+}
+
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="alert alert-warning alert-dismissible fade show" role='alert'>
+		<strong>@Model.errorMessage</strong>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Chiudi"></button>
+	</div>
+}
+
+<a class="btn btn-primary btn-sm" href="New">New</a>
+
+<div>
+	<table width="80%">
+		<tr>
+			<th width="5%">Id</th>
+			<th width="40%">Titolo</th>
+			<th width="20%">Autore</th>
+			<th align="right" width="10%">Prezzo</th>
+			<th width="5%"></th>
+			<th width="20%"></th>
+		</tr>
+
+		@foreach (var record in @Model.listaLibri)
+		{
+			<tr>
+				<td>@record.Id</td>
+				<td>@record.Titolo</td>
+				<td>@record.NomeAutore</td>
+				<td align="right">@record.Prezzo €</td>
+				<td></td>
+				<td>
+					<a class="btn btn-primary btn-sm" href="Edit?id=@record.Id">Edit</a>
+					<a class="btn btn-danger btn-sm" href="Delete?id=@record.Id">Delete</a>
+				</td>
+			</tr>
+		}
+
+	</table>
+</div>
