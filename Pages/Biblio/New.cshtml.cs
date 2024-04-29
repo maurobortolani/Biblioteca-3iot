@@ -69,7 +69,6 @@ namespace Biblioteca.Pages.Biblio
 				errorMessage = ex.Message;
 			}
 
-
 			// cerco o creo L'editore
 			try
 			{
@@ -140,7 +139,7 @@ namespace Biblioteca.Pages.Biblio
 				errorMessage = ex.Message;
 			}
 
-			//Response.Redirect("Lista");
+			Response.Redirect("Lista");
 		}
     }
 }
